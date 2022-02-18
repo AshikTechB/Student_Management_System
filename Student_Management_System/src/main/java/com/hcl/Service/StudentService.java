@@ -1,4 +1,4 @@
-package com.hcl.Service;
+package com.hcl.service;
 
 public class StudentService {
 
