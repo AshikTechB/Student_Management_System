@@ -1,4 +1,4 @@
-package com.hcl.Controller;
+package com.hcl.controller;
 
 public class StudentController {
 
