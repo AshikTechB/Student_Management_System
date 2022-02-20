@@ -2,6 +2,7 @@ package com.hcl.Entity;
 
 import java.util.Date;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import javax.persistence.TemporalType;
 
 
 /*
- * Entity Class With Annotation 
+ * Entity Class With Annotation  
  * To Define The Table Structure Of Database 
  */
 
@@ -99,7 +100,8 @@ public class Student {
 	}
 
 	public void setBiology(int biology) {
-		this.biology=biology;
+		this.biology = biology;
+	}
  
     @Override
     public String toString() {
