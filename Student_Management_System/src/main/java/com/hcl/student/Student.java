@@ -63,6 +63,7 @@ public class Student {
 		return chemistry;
 	}
 
+	
 	public void setChemistry(int chemistry) {
 		this.chemistry = chemistry;
 	}
