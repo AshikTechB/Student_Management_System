@@ -5,8 +5,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-
-// some error occurs
 public class StudentDAO {
 	public List findById(int id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
