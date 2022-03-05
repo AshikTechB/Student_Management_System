@@ -31,6 +31,6 @@ public class StudentController extends HttpServlet{
 		std.DisplayStudentById(id);
 		
 	}
-	
+	//c
 
 }
