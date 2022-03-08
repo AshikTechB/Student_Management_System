@@ -1,4 +1,4 @@
-package com.hcl.student;
+package com.hcl.model;
 
 import java.util.Date;
 

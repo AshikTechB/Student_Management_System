@@ -4,8 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.hcl.dao.*;
-
-import com.hcl.student.*;
+import com.hcl.model.*;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

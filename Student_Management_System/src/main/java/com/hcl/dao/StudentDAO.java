@@ -1,21 +1,17 @@
 package com.hcl.dao;
 
 import java.util.List;
+import com.hcl.model.Student;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
+public interface StudentDAO {
 
+	public void addStudent(Student student);
 
-public class StudentDAO {
-	@SuppressWarnings("unchecked")
-	public List<Integer> findById(int id) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Query selectQuery = session.createQuery("select obj from Student obj where obj.id =:au");
-		selectQuery.setParameter("au", id);
-		List<Integer> resultset = selectQuery.list();
-		
-		session.close();
-		return resultset;
-	}
-	
+	public List<Student> getAllStudents();
+
+	public void deleteStudent(Integer studentId);
+
+	public Student updateStudent(Student student);
+
+	public Student getStudent(int studentid);
 }
