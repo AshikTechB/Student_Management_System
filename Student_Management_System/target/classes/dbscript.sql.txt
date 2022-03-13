@@ -5,7 +5,7 @@ Create table student_account(
  primary key(id)
  );
  desc student_account;
- drop table student_account;
+ 
 CREATE TABLE STUD_TBL(
   id NUMBER(11) ,
    rollno  NUMBER(11),
@@ -16,17 +16,24 @@ CREATE TABLE STUD_TBL(
   biology NUMBER(11) ,
  division varchar(10),
  result varchar(10),
+ primary key(rollno),
+ 
   FOREIGN KEY (id) REFERENCES student_account(id)
 );
+desc STUD_TBL;
 
       insert into Student_account
       values (1000,'ashikUsr','ashikPwd');
       insert into Student_account
        values (1001,'harishUsr','harishPwd');
 
-
+select * from student_account;
 
        insert into stud_tbl
        values(1000,25,'ashik','25/2/2022',50,40,20,'II','pass');
        insert into stud_tbl
        values(1001,26,'harish','24/2/2022',55,40,25,'I','pass');
+       
+select * from STUD_TBL;
+
+
