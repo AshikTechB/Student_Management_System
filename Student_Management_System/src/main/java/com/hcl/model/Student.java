@@ -1,126 +1,104 @@
 package com.hcl.model;
 
-
-
-import java.io.Serializable;
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-
-
-/* In this file provide what are the columns in the table */
 @Entity
-@Table(name = "STUD_TBL")
-public class Student implements Serializable {
-
-	private static final long serialVersionUID = -3465813074586302847L;
-
+@Table(name="Student")
+public class Student {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	
 	private int id;
-
-	@Column
+	
+	@Column(name="Rollno")
 	private int rollno;
 	
-	@Column
+	@Column(name="Name")
 	private String name;
-
-	@Column
-	private String doa;
-
-	@Column
+	
+	@Column(name="DateOfAdmission")
+	private String dateOfAdmission;
+	
+	@Column(name="Physics")
 	private int physics;
 
-	@Column
+	@Column(name="Chemistry")
 	private int chemistry;
 	
-	@Column
+	@Column(name="Biology")
 	private int biology;
-	
-	@Column 
+
+	@Column(name="Division")
 	private String division;
 	
-	@Column
-	private String result;
-
-	public String getDivision() {
-		return division;
-	}
-
-	public void setDivision(String division) {
-		this.division = division;
-	}
-
-	public String getResult() {
-		return result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public int getRollno() {
-		return rollno;
-	}
-
-	public void setRollno(int rollno) {
-		this.rollno = rollno;
-	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getDoa() {
-		return doa;
+	public String getDateOfAdmission() {
+		return dateOfAdmission;
 	}
-
-	public void setDoa(String doa) {
-		this.doa = doa;
+	public void setDateOfAdmission(String DateOfAdmission) {
+		this.dateOfAdmission = DateOfAdmission;
 	}
-
-	public int getPhysics() {
+	public int Physics() {
 		return physics;
 	}
-
-	public void setPhysics(int physics) {
+	public void setBasicpay(int physics) {
 		this.physics = physics;
 	}
-
 	public int getChemistry() {
 		return chemistry;
 	}
-
 	public void setChemistry(int chemistry) {
 		this.chemistry = chemistry;
 	}
-
 	public int getBiology() {
 		return biology;
 	}
-
 	public void setBiology(int biology) {
 		this.biology = biology;
 	}
-
+	public String getDivision() {
+		return division;
+	}
+	public void setDivision(String division) {
+		this.division = division;
+	}
 	
 
+	public Student() {}
+	
+	public Student(int rollno, String name, String dateOfAdmission, int physics, int chemistry, int biology,
+			String division) {
+		super();
+		this.rollno = rollno;
+		this.name = name;
+		this.dateOfAdmission = dateOfAdmission;
+		this.physics = physics;
+		this.chemistry = chemistry;
+		this.biology = biology;
+		this.division = division;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", rollno=" + rollno + ", name=" + name + ", dateOfAdmission=" + dateOfAdmission
+				+ ", physics=" + physics + ", chemistry=" + chemistry + ", biology=" + biology + ", division="
+				+ division + "]";
+	}
+	
+	
 }
