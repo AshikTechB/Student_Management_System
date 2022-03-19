@@ -1,5 +1,3 @@
-
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,7 +8,7 @@
 <link rel="stylesheets" href="styleSheets.css">
 </head>
 <body>
-<div align="center">
+	<div align="center">
 
         <div class="header">
             <h1>Student Management System</h1>
@@ -20,13 +18,13 @@
             <a  href="home.html">Home</a>
         </div>
             
-          <div>	<h2 >STAFF LOGIN</h2></div>
+          <div>	<h2 >Student Login</h2></div>
 	
 		<br />
 		<form action="/home" method="get">
             <div class="form-group">
-                <label for="userid">User ID &nbsp;</label>
-                <input type="text"  id="userid" placeholder="User Id">
+                <label for="userid">Username</label>
+                <input type="text"  id="userid" placeholder="Username">
             </div>
 		<br/> 
             <div class="form-group">
@@ -38,7 +36,8 @@
 		<input type="Submit" id="validate" value="Login">
 		<br><br>
 		</form>
-		New user <a href="registerStaff">register</a>
+	
 	</div>
+
 </body>
 </html>
