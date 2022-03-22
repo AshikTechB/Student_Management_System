@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import com.hcl.exception.DuplicateValueException;
 import com.hcl.exception.StudentNotFound;
 import com.hcl.model.Student;
-import com.hcl.model.StudentLogin;
-import com.hcl.repo.StudentLoginRepo;
+import com.hcl.model.StaffLogin;
+import com.hcl.repo.StaffLoginRepo;
 import com.hcl.repo.StudentRepo;
 
 @Service
@@ -20,7 +20,7 @@ public class StudentService {
 	private StudentRepo StudentRepo;
 	
 	@Autowired
-	private StudentLoginRepo userRepo;
+	private StaffLoginRepo userRepo;
 	public Student addStudent(Student Student) {
 		Optional<Student> optStud = StudentRepo.findById(Student.getId());
 		if(optStud.isPresent()) {
@@ -70,9 +70,9 @@ public class StudentService {
 	}
 	
 	public boolean findUser(String userId, String password) {
-		Optional<StudentLogin> u = userRepo.findById(userId);
+		Optional<StaffLogin> u = userRepo.findById(userId);
 		if(u.isPresent()) {
-			StudentLogin user = u.get();
+			StaffLogin user = u.get();
 			if(user.getPassword().equals(password)) {
 				return true;
 			}

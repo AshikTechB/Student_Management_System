@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hcl.model.Student;
-import com.hcl.model.StudentLogin;
+import com.hcl.model.StaffLogin;
 import com.hcl.service.StudentService;
 
 @RestController
