@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { viewStudents } from './view/viewStudents.component';
+import { HomeComponent } from './home/home/home.component';
+import { StaffComponent } from './staffRegistration/staff/staff.component';
 
-const routes: Routes = [];
-{ path: 'allStudent', component: viewStudentsComponent },
+
+import { StudentListComponent } from './student-list/student-list/student-list.component';
+
+const routes: Routes = [
+  {path:'viewAll', component:StudentListComponent},
+  {path:'staffRegister',component:StaffComponent},
+  {path:'login',component:HomeComponent},
   
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

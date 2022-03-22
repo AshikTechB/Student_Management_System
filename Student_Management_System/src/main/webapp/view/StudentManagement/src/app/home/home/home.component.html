@@ -1,0 +1,28 @@
+<div class="header">
+    <h1>Student Management System</h1>
+    
+  </div>
+  <div class="navbar">
+   
+    <div class="rightNav">
+        
+        <a routerLink="/login">Logout</a>
+    </div>
+  </div>
+  <div class="stfView">
+    
+    <form action ="Search">
+       
+        <input type="number" placeholder="Student-Id" name ="stdId">
+        <button type="submit">Show details</button>
+    </form>
+    
+       <a routerLink="/viewAll" ><button>View All Students</button>
+       </a>  
+    
+        <a routerLink="/addStudent"><button>Add Student</button></a>
+  </div>
+  <div  >
+  
+  </div>
+  <router-outlet></router-outlet>

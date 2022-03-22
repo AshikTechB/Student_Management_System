@@ -1,27 +1,29 @@
 
 
 
-
-
-
-
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs-compat/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Student } from '../model/student';
-
-
-import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService(private http: HttpClient) {
-  this.allstudent='http://localhost:2220/allStudent';
 
-  constructor() {}
-  public getAllStudent(): Observable<Student[]>{
-    return this.http.get<Student[]>(this.allStudent);
+
+export class StudentService {
+
+  private allStudentUrl: string;
+  private saveStudentUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.allStudentUrl = 'http://localhost:3330/viewAll';
+    this.saveStudentUrl= 'http://localhost:3330/save';
+    
+  }
+  public findAll(): Observable<Student[]> {
+    return this.http.get<Student[]>(this.allStudentUrl);
+  }
+  public save(student: Student) {
+    return this.http.post<Student>(this.saveStudentUrl, student);
   }
 }
-
