@@ -11,5 +11,8 @@ export class StudentUpdateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSubmit{
+    
+  }
 
 }
