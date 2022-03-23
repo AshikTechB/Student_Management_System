@@ -1,0 +1,28 @@
+<div>
+    <div align="center">
+    <h1>Student Management System</h1><br>
+    </div>
+  
+  <div class="navbar", align="right">
+  
+   <a  href="home.html">Home</a><br>
+  
+</div>
+
+ 
+    <h1>Student Details</h1><br>
+<table>
+   <tr><td> Roll.no      :</td><td> <input type="text" [(ngModel)]="user.no"><br><br></td></tr>
+   <tr><td> Name       : </td><td><input type="text" [(ngModel)]="user.name"><br><br></td></tr>
+    <tr><td>Date Of Admission          : </td><td><input type="text" [(ngModel)]="user.doa"><br><br></td></tr>  
+    <tr><td>Division         : </td><td><input type="text" [(ngModel)]="user.div"><br><br>  </td></tr> 
+    <tr><td>Physics         : </td><td><input type="text" [(ngModel)]="user.physics"><br><br></td></tr>
+    <tr><td>Chemistry: </td><td><input type="text" [(ngModel)]="user.chemistry"><br><br> </td></tr>
+   <tr><td>Biology: </td><td><input type="text" [(ngModel)]="user.biology"><br><br> </td></tr>
+   <tr><td>Result: </td><td><input type="text" [(ngModel)]="user.result"><br><br> </td></tr>
+
+        </table>
+    <input type="Submit" value="ADD" (click)="onSubmit()">
+        
+    
+</div>
