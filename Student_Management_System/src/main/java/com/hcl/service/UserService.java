@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.hcl.exception.DuplicateValueException;
 import com.hcl.model.User;
-import com.hcl.repository.UserRepo;
+import com.hcl.repo.UserRepo;
 	
 @Service
 	public class UserService {
