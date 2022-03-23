@@ -10,9 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Staff")
-public class StaffLogin {
+public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	
 	@Column(name="userid")
 	private int userid;
 	
@@ -34,9 +35,9 @@ public class StaffLogin {
 	@Column(name="password")  
     public String password;
 
-	public StaffLogin() {}
+	public User() {}
 	
-	public StaffLogin(int userid, String email, String fname, String lname, int phone, String address,
+	public User(int userid, String email, String fname, String lname, int phone, String address,
 			String password) {
 		super();
 		this.userid = userid;
