@@ -38,7 +38,7 @@
           <label for="address">Biology</label>
           <input type="text" [(ngModel)]="student.address" class="form-control" id="student" name="student" placeholder="Student:"
             required #biology="ngModel">
-        </div>
+      <!--  </div>
             <div class="form-group">
                 <label for="address">Division</label>
                 <input type="text" [(ngModel)]="student.division" class="form-control" id="division" name="division" placeholder="Address:"
@@ -49,6 +49,7 @@
                     <input type="text" [(ngModel)]="student.result" class="form-control" id="result" name="result" placeholder="Result:"
                       required #result="ngModel">
                     </div>
+           -->         
         <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
       </form>
     </div>

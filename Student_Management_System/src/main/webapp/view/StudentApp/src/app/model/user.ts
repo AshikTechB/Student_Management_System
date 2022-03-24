@@ -9,7 +9,7 @@ export class User {
     username: String='';
     password: String = '';
     
-
+/*
   constructor(userid: number,fname: String,lname: String,address: String,email: String,phone: Number,username: String,password: String){
       this.userid=userid;
       this.fname=fname;
@@ -19,5 +19,5 @@ export class User {
       this.username=username;
       this.password=password;
   }
-
+*/
 }

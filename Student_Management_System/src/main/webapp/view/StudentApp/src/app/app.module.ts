@@ -12,7 +12,7 @@ import { NewStudentComponent } from './add-Student/new-student/new-student.compo
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationComponent } from './user-registration/user-registration/user-registration.component';
 import { UserLoginComponent } from './user-login/user-login/user-login.component';
-import { SearchStudentComponent } from './search-student/search-student/search-student.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,7 @@ import { SearchStudentComponent } from './search-student/search-student/search-s
     NewStudentComponent,
     UserRegistrationComponent,
     UserLoginComponent,
-    SearchStudentComponent
+   
   ],
   imports: [
     BrowserModule,

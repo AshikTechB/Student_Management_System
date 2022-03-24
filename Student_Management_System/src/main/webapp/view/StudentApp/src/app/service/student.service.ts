@@ -16,13 +16,17 @@ export class StudentService {
   private addStudentUrl: string;
  private studentByIdURL: string;
   private deleteUrl: string;
-  userUrl: string;
+  private userUrl: string;
+ 
+  loginUserUrl: string;
   constructor(private http:HttpClient) { 
     this.allStudentUrl = 'http://localhost:9090/allStudent';
     this.addStudentUrl = 'http://localhost:9090/student';
     this.studentByIdURL='http://localhost:9090/student/';
     this.deleteUrl='http://localhost:9090/student/';
     this.userUrl='http://localhost:9090/users';
+    this.loginUserUrl='http://localhost:9090/validateUser';
+    
   }
   public findAll(): Observable<any> {
     return this.http.get<Student[]>(this.allStudentUrl);
@@ -41,9 +45,20 @@ export class StudentService {
 
     return this.http.delete<Student[]>(this.studentByIdURL);
   }
+ 
+  
+  /*user login and registration*/ 
   public findAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.userUrl);
    
   }
+
+  public getAllUser(): Observable<User[]>{
+    return this.http.get<User[]>(this.userUrl);
+  }
+
+  public registerUser(user: User) {
+    return this.http.post<User>(this.userUrl, user);
+    }
 
 }

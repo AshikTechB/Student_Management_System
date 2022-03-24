@@ -13,7 +13,7 @@ export class NewStudentComponent implements OnInit {
 
   student: Student;
   constructor(private route: ActivatedRoute, private router: Router, private studentservice: StudentService) {
-    this.student = new Student();
+    this.student = new Student(0,0,'','',0,0,0,'','');
   }
 
   onSubmit() {
@@ -24,22 +24,22 @@ export class NewStudentComponent implements OnInit {
     this.router.navigate(['/home']);
   }
   findResult() {
-    let st = new Student();
-    let physics = st.physics;
-    let biology = st.biology;
-    let chemistry = st.chemistry;
+    
+    let physics = this.student.physics;
+    let biology = this.student.biology;
+    let chemistry = this.student.chemistry;
     let score = (physics + biology + chemistry) / 3;
     if (score >= 60) {
-      st.division = "I ";
-      st.result = "Pass";
+      this.student.division = "I ";
+      this.student.result = "Pass";
     }
     else if (score >= 40 && score < 60) {
-      st.division = "II ";
-      st.result = "Pass";
+      this.student.division = "II ";
+      this.student.result = "Pass";
     }
     else {
-      st.division = "III ";
-      st.result = "Fail";
+      this.student.division = "III ";
+      this.student.result = "Fail";
     }
 return;
 

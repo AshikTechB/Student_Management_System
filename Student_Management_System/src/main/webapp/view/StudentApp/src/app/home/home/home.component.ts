@@ -30,7 +30,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate([`student/${this.student.id}`]);
 
   }
- 
+ viewAll(){
+   this.router.navigate(['viewAll']);
+ }
+ addnewStudent(){
+  this.router.navigate(['addStudent']);
+ }
 
   ngOnInit(): void {
   }

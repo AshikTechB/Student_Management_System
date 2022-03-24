@@ -6,24 +6,31 @@
    
     <div class="rightNav">
         
-        <a routerLink="/login">Logout</a>
+      <a href="/userLogin"><button>Log out</button> </a>
     </div>
   </div>
   <div class="stfView">
     
-    <form #nameform="ngForm" (ngSubmit)="showStudent(nameform)">
+    <form #nameform="ngForm"  (ngSubmit)="showStudent(nameform)">
         <label for="search"></label>
         <!-- input name="author" required ngModel type="text" id="author        "/ -->
-        <input name="search"   type="text" id="search "/>
+        <input name="search"    required [(ngModel)]="student.id" type="text" id="search "/>
         <input class="button" type="Submit" value="Search" />
       </form>
      
-       <a routerLink="/viewAll" ><button>View All Students</button>
-       </a>  
-    
-        <a routerLink="/addStudent"><button>Add Student</button></a>
+     <div>
+        <input
+        type="button"
+        value="View All"
+        (click)="viewAll()">
+    </div>
+    <div>
+      <input
+      type="button"
+      value="Add Student"
+      (click)="addnewStudent()">
+  </div>
   </div>
   <div  >
     <router-outlet></router-outlet>
   </div>
-  <router-outlet></router-outlet>
