@@ -11,12 +11,14 @@ CREATE TABLE student(
      primary key(id)
      );
     
-create table user_detail(
+ create table user_detail(
+    
     fname varchar(20),
     lname varchar(20),
     phone Number(20),
     email varchar(40),
     address varchar(40),
+    username varchar(40) UNIQUE, 
     userid number(20) NOT NULL,
     password varchar(20),
      primary key(userid)

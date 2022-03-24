@@ -18,6 +18,6 @@ public interface UserService {
 	
 	public void addUser(User user);
 	
-	public boolean validate_User(long userId,String Pass);
+	public boolean validate_User(String username,String Password);
 
 }

@@ -76,8 +76,8 @@ public class StudentController {
 	}
 
 	@PostMapping(path = "/validateUser", produces = "application/json")
-	public boolean ValidateUser(@RequestParam long userid, @RequestParam String pass) {
-		return userservice.validate_User(userid, pass);
+	public boolean ValidateUser(@RequestParam String username, @RequestParam String password) {
+		return userservice.validate_User(username, password);
 	}
 
 }
