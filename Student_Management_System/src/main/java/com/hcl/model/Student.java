@@ -1,6 +1,14 @@
 package com.hcl.model;
 
+
+
+
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +28,9 @@ public class Student {
 	@Column(name="Name")
 	private String name;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name="DateOfAdmission")
-	private String dateOfAdmission;
+	private Date  dateOfAdmission;
 	
 	@Column(name="Physics")
 	private int physics;
@@ -62,11 +71,11 @@ public class Student {
 		this.name = name;
 	}
 
-	public String getDateOfAdmission() {
+	public Date  getDateOfAdmission() {
 		return dateOfAdmission;
 	}
 
-	public void setDateOfAdmission(String dateOfAdmission) {
+	public void setDateOfAdmission(Date  dateOfAdmission) {
 		this.dateOfAdmission = dateOfAdmission;
 	}
 
@@ -111,7 +120,7 @@ public class Student {
 
 	public Student() {}
 
-	public Student(int id, int rollno, String name, String dateOfAdmission, int physics, int chemistry, int biology,
+	public Student(int id, int rollno, String name, Date  dateOfAdmission, int physics, int chemistry, int biology,
 			String division, String result) {
 		super();
 		this.id = id;
@@ -125,7 +134,7 @@ public class Student {
 		this.result = result;
 	}
 
-	public Student(int rollno, String name, String dateOfAdmission, int physics, int chemistry, int biology,
+	public Student(int rollno, String name, Date  dateOfAdmission, int physics, int chemistry, int biology,
 			String division, String result) {
 		super();
 		this.rollno = rollno;
