@@ -1,18 +1,17 @@
 CREATE TABLE student(
   id NUMBER(11) ,
-   rollno  NUMBER(11),
+  rollno  NUMBER(11),
   name varchar(45) NOT NULL,
-  dateofadmission varchar(45) NOT NULL,
+  date_of_admission DATE NOT NULL,
   physics NUMBER(11) ,
   chemistry NUMBER(11) ,
   biology NUMBER(11) ,
- division varchar(10),
- result varchar(10),
+  division varchar(10),
+  result varchar(10),
  primary key(id)
  );
     
  create table user_detail(
-    
     fname varchar(20),
     lname varchar(20),
     phone Number(20),
