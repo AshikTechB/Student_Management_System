@@ -65,7 +65,7 @@ public class StudentController {
 		return studService.deleteStudent(s);
 	}
 
-	@PostMapping(path = "/users", consumes = "application/json")
+	@PostMapping(path = "/registeruser", consumes = "application/json")
 	void addUser(@RequestBody User user) {
 		userservice.addUser(user);
 	}
