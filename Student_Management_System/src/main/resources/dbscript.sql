@@ -2,7 +2,7 @@ CREATE TABLE student(
   id NUMBER(11) ,
    rollno  NUMBER(11),
   name varchar(45) NOT NULL,
-  date_of_admission varchar(45) NOT NULL,
+  dateofadmission varchar(45) NOT NULL,
   physics NUMBER(11) ,
   chemistry NUMBER(11) ,
   biology NUMBER(11) ,
