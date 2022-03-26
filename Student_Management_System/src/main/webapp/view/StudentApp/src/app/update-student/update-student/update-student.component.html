@@ -1,0 +1,84 @@
+
+
+
+
+<div class="html">
+    <div class="card my-5">
+        <div class="card-body">
+
+    <div class="body" align="center">
+        <h2 align="center">Update Student</h2>
+    </div>
+    
+    <br>
+
+    <div class="row" align="right">
+        <a style="color: green" href="/home"><button>Home</button></a>
+        <a style="color: green" href="/userLogin"><button>Logout</button></a>
+    </div>
+
+    <br>
+    <br>
+    
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+        <div align="left">
+            
+            <div class="form-group">
+                <label><b>Student Id:</b></label>
+                <input type="text" [(ngModel)]="student.id" class="form-control" id="id" name="id" placeholder=""  #id="ngModel" disabled/>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label><b>Name:</b></label>
+                <input type="text" [(ngModel)]="student.name" class="form-control" id="name" name="name" placeholder=""  #name="ngModel" >
+            </div>
+
+            <br>
+            
+            <div class="form-group">
+                <label><b>Rollno::</b></label>
+                <input type="text" [(ngModel)]="student.rollno" class="form-control" id="rollno" name="rollno" required #rollno="ngModel">
+            </div> 
+            
+            <br>
+            
+            <div class="form-group">
+                <label><b>Date of Admission:</b></label>
+                <input type="date" [(ngModel)]="student.dateOfAdmission" class="form-control" id="dateOfAdmission" name="dateOfAdmission"  #dateOfAdmission="ngModel">
+            </div> 
+
+            <br>
+
+            <div class="form-group">
+                <label><b>Physics mark:</b></label>
+                <input type="text" [(ngModel)]="student.physics" class="form-control" id="physics" name="physics" placeholder=""  #physics="ngModel">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label><b>Chemistry mark:</b></label>
+                <input type="text" [(ngModel)]="student.chemistry" class="form-control" id="chemistry" name="chemistry" placeholder=""  #chemistry="ngModel">
+            </div> 
+
+            <br>
+
+            <div class="form-group">
+                <label><b>Biology mark:</b></label>
+                <input type="text" [(ngModel)]="student.biology" class="form-control" id="biology" name="biology" placeholder=""  #biology="ngModel">
+            </div>
+
+            <br>
+
+            <div class="row">
+                <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

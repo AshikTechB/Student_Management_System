@@ -1,37 +1,79 @@
-<!-- h2>Did you just pressed Log In :-)</h2 -->
-<div class="body">
-    <div align="center">
-        <h1 style="color: white">STUDENT MANAGEMENT SYSTEM</h1>
+
+<div class="html">
+    
+    <div class="card">
+        <h2 style="font-size: 50px; position: relative; left: 700px; top: 50px;" >LOGIN</h2>
+        
         <br />
         <br />
-        <div class="card">
-            <h2>LOGIN</h2>
+
+        <form #signupForm="ngForm" (ngSubmit)="userLogin(signupForm)">
+            <div class="form-group">
+                <label for="username"><b> Username </b></label>
+                <input
+                  type="text"
+                  [(ngModel)]="user.username"
+                  class="form-control"
+                  required
+                
+                  id="username"
+                  name="username"
+                  placeholder=""
+                  required
+                  #username="ngModel"
+                />
+       <div
+                  *ngIf="username.invalid && (username.dirty || username.touched)"
+                  class="alert"
+                >
+      <div *ngIf="username.errors?.['required']">
+                    <b>**username is required</b>
+                  </div>
+      
+      </div>
+      </div>
+        
             <br />
             <br />
+            <div class="form-group">
+                <label for="password"><b> Password </b></label>
+                <input
+                  type="password"
+                  [(ngModel)]="user.password"
+                  class="form-control"
+                  required
+                
+                  id="password"
+                  name="password"
+                  placeholder=""
+                  required
+                  #password="ngModel"
+                />
+       <div
+                  *ngIf="password.invalid && (password.dirty || password.touched)"
+                  class="alert"
+                >
+      <div *ngIf="password.errors?.['required']">
+                    <b>**password required</b>
+                  </div>
+      
+      </div>
+      </div>
+                <p>
+            <input class="button" type="Submit"[disabled]="!signupForm.form.valid" id="validate" value="Login" /></p>
+            
+            <br />
+            
+            
+        </form>
+        
+        <span class="anchor3" style="position: relative; left: 670px;">Don't have an account <a href="/userRegistration"> Create</a></span>
+            <div *ngIf="status" style="color: rgb(230, 24, 41)">
+            <h3>Welcome!! {{ name }} You Are Successfully Logged In</h3>
+        </div>
 
-            <form #signupForm="ngForm" (ngSubmit)="userLogin(signupForm)">
-                <label style="font-size: 30px" for="username">User Name: </label>
-                <input class="anchor1" type="text" placeholder="User id" name="username" id="username" ngModel
-                    required />
-                <br />
-                <br />
-                <label style="font-size: 30px" for="password">Password: </label>
-                <input class="anchor2" placeholder="Password" type="text" name="password" id="password" ngModel
-                    required />
-                <br />
-                <br />
-                <input class="button" type="Submit" id="validate" value="Login" />
-                <br />
-            </form>
-
-            <a routerLink="/userRegistration"><button class="anchor1">Create New Account</button></a>
-            <div *ngIf="status" style="color: rgb(196, 243, 26)">
-                <h3>Welcome!! {{ name }} You Are Successfully Logged In</h3>
-            </div>
-
-            <div *ngIf="error" style="color: rgb(196, 243, 26)">
-                User Id Or Password Seems Incorrect !
-            </div>
+        <div *ngIf="error" style="color: rgb(243, 26, 26);position:relative; left:600px"><br>
+            <p>User Id Or Password Seems Incorrect !</p>
         </div>
     </div>
 </div>

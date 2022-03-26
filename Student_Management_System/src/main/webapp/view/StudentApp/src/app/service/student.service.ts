@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs-compat/Observable';
+import { Observable } from 'rxjs';
 import { Student } from '../model/student';
 import { User } from '../model/user';
 
@@ -12,53 +12,54 @@ import { User } from '../model/user';
 })
 export class StudentService {
 
-  private allStudentUrl:string;
-  private addStudentUrl: string;
- private studentByIdURL: string;
-  private deleteUrl: string;
-  private userUrl: string;
+  private allstdUrl:string;
+  private saveStudentUrl: string;
+
+  private deleteStudentByIdUrl: string;
+  private UserUrl: string;
  
-  loginUserUrl: string;
+ 
+  private findStudentByIdUrl: string;
+private registerUrl:string;
+private updatestudentUrl:string;
   constructor(private http:HttpClient) { 
-    this.allStudentUrl = 'http://localhost:9090/allStudent';
-    this.addStudentUrl = 'http://localhost:9090/student';
-    this.studentByIdURL='http://localhost:9090/student/';
-    this.deleteUrl='http://localhost:9090/student/';
-    this.userUrl='http://localhost:9090/users';
-    this.loginUserUrl='http://localhost:9090/validateUser';
+    this.allstdUrl = 'http://localhost:9090/allStudent';
+    this.saveStudentUrl = 'http://localhost:9090/student';
+    this.findStudentByIdUrl='http://localhost:9090/student/';
+    this.deleteStudentByIdUrl='http://localhost:9090/student/';
+    this.UserUrl='http://localhost:9090/users';
+    this.registerUrl='http://localhost:9090/registeruser';
+    this.updatestudentUrl='http://localhost:9090/updatestudent';
+
     
   }
-  public findAll(): Observable<any> {
-    return this.http.get<Student[]>(this.allStudentUrl);
-   // return  this.http.request('GET', this.allStudentUrl, {responseType:'json'});
-  }
- 
- 
-  public addStudent(student: Student) {
-    return this.http.post<Student>(this.addStudentUrl, student);
-  }
-  public StudentById (id:number): Observable<any>{
-
-    return this.http.get<Student[]>(this.studentByIdURL);
-  }
-  public deleteStudent (id:number): Observable<any>{
-
-    return this.http.delete<Student[]>(this.studentByIdURL);
-  }
- 
-  
-  /*user login and registration*/ 
-  public findAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl);
-   
-  }
-
   public getAllUser(): Observable<User[]>{
-    return this.http.get<User[]>(this.userUrl);
+    return this.http.get<User[]>(this.UserUrl);
   }
 
   public registerUser(user: User) {
-    return this.http.post<User>(this.userUrl, user);
+    return this.http.post<User>(this.registerUrl, user);
     }
+
+  public getAllstd(): Observable<Student[]>{
+    return this.http.get<Student[]>(this.allstdUrl);
+  }
+  public findById( id:string): Observable<Student>{
+      
+      return this.http.get<Student>(this.findStudentByIdUrl+id);
+  }
+
+  public deleteById( id:string): Observable<String>{
+
+    return this.http.delete<String>(this.deleteStudentByIdUrl+id);
+}
+
+public saveStudent(student:Student){
+  return this.http.post<Student>(this.saveStudentUrl, student);
+}
+public updateStudent(student:Student):Observable<String>{
+  
+ return this.http.put<String>(this.updatestudentUrl,student);
+}
 
 }

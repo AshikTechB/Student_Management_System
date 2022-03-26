@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { StudentService } from 'src/app/service/student.service';
 
@@ -12,7 +12,7 @@ import { StudentService } from 'src/app/service/student.service';
 export class UserRegistrationComponent implements OnInit {
 
   user : User;
-  constructor(private route:ActivatedRoute,private router: Router,private studentservice:StudentService) {
+  constructor(private router: Router,private studentservice:StudentService) {
     this.user= new User();
    }
    onSubmit() {

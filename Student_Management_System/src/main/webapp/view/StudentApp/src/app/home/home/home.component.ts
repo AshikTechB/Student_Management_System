@@ -4,8 +4,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/app/model/student';
+import { StudentService } from 'src/app/service/student.service';
 
 @Component({
   selector: 'app-home',
@@ -14,30 +15,63 @@ import { Student } from 'src/app/model/student';
 })
 export class HomeComponent implements OnInit {
   
-  student: Student;
+  searchtype: string='';
+  student:Student; 
+    constructor(private router: Router,private studentService: StudentService,private route: ActivatedRoute)
+   {
+    this.student = new Student();
+   }
+   public formData:any ={};
+   allstudent(){
+      //this.searchtype = 'all';
+      //this.router.navigate([`allStudent/${this.searchtype}`]);
+
+      this.router.navigate(['allStudent']);
+   }
   
-  constructor(private router: Router) {
-    this.student= new Student(0,0,'','',0,0,0,'','');
-  }
-  public formData: any = {};
-
-
-  showStudent(formData: NgForm) {
+   studentidstatus: boolean = false;
+   studentid() {
+      this.studentidstatus = true;
+      this.studentidstatusDl=false;
+    }
+    studentidstatusDl: boolean = false;
     
-    this.formData = formData.value;
+    studentidDl(){
+   this.studentidstatusDl=true;
+   this.studentidstatus = false;
+    }
+    
+    showStdById(formdata1: NgForm) {
+      this.formData = formdata1.value;
+      this.searchtype = 'byId';
+      this.router.navigate([`studentById/${this.student.id}/${this.searchtype}`]);
+    }
+  
+    studentiddelstatus: boolean = false;
 
-    console.log(this.formData.id);
-    this.router.navigate([`student/${this.student.id}`]);
+    deleteStdById(formdata: NgForm) {
+      this.formData = formdata.value;
+      this.searchtype = 'delId';
+      this.router.navigate([`deleteById/${this.student.id}/${this.searchtype}`]);
+    }
+  
+    addStudent(){
+      this.router.navigate(['addStudent']);
+    }
+  
+    ngOnInit(): void {
+      
 
-  }
- viewAll(){
-   this.router.navigate(['viewAll']);
- }
- addnewStudent(){
-  this.router.navigate(['addStudent']);
- }
+      this.route.params.subscribe( (parameters)=>{
+        if (String(parameters['searchtype']).localeCompare('delId') == 0) {
+        this.studentService.deleteById(parameters['id']).subscribe(x => {
+          console.log(x);
+          this.studentiddelstatus = true;
+        });
+          
+        }
+        });
 
-  ngOnInit(): void {
-  }
+}
 
 }

@@ -1,36 +1,61 @@
-<div class="header">
-    <h1>Student Management System</h1>
-    
+<div class="body">
+  <div style="color: white" align="right">
+    <h4 align="right">
+      <br />
+      <a style="color: green" href="/userLogin"><button>Log out</button> </a>
+    </h4>
   </div>
-  <div class="navbar">
-   
-    <div class="rightNav">
-        
-      <a href="/userLogin"><button>Log out</button> </a>
-    </div>
-  </div>
-  <div class="stfView">
+  <div align="center">
+    <h1 style="color: red">STUDENT MANAGEMENT SYSTEM</h1>
+    <br />
+    <br />
+    <br /><br />
+    <input class="anchor1" type="button" value="View All Students" (click)="allstudent()" />
+    <br/>
+    <br/>
     
-    <form #nameform="ngForm"  (ngSubmit)="showStudent(nameform)">
-        <label for="search"></label>
-        <!-- input name="author" required ngModel type="text" id="author        "/ -->
-        <input name="search"    required [(ngModel)]="student.id" type="text" id="search "/>
-        <input class="button" type="Submit" value="Search" />
+    <input class="anchor1" type="button" value="Find student by Id" (click)="studentid()" />
+    <br /><br />
+<!-- search student by id-->
+    <div *ngIf="studentidstatus&&!studentidstatusDl" id="au">
+      <form #form2="ngForm" (ngSubmit)="showStdById(form2)">
+        <label for="id"></label>
+
+        <input name="id" required [(ngModel)]="student.id" type="number" id="id" />
+
+        <input class="button" type="submit" value="Search" />
       </form>
-     
-     <div>
-        <input
-        type="button"
-        value="View All"
-        (click)="viewAll()">
     </div>
-    <div>
-      <input
-      type="button"
-      value="Add Student"
-      (click)="addnewStudent()">
+    <br />
+    <br />
+    
+
+    <input class="anchor1" type="button" value="Delete Student by Id" (click)="studentidDl()" />
+    <br /><br />
+
+    <div *ngIf="studentidstatusDl && !studentidstatus" id="id">
+      <form #form3="ngForm" (ngSubmit)="deleteStdById(form3)">
+        <label for="id"></label>
+
+        <input  name="id" required  [(ngModel)]="student.id" type="number" id="id" />
+
+        <input class="button" type="Submit" value="Delete" />
+        <div *ngIf="studentiddelstatus">
+          <label>
+            The Student details is successfully removed !! 
+          </label>
+        </div>
+      </form>
+      
+    </div>
+    <br />
+    <br />
+  
+    
+    <!-- Add Student-->
+    <input class="anchor1" type="button" value="Add Student" (click)="addStudent()" />
+
+
+
   </div>
-  </div>
-  <div  >
-    <router-outlet></router-outlet>
-  </div>
+</div>

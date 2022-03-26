@@ -1,16 +1,14 @@
-
-
-
-
 <div class="header">
     <h1>Student Management System</h1>
     
   </div>
   <div class="navbar">
-   
+  
     <div class="rightNav">
-        <a  href="/home">Home</a>
-        <a href="/login">Logout</a>
+    
+        <a style="color: green" href="/home"><button>Home</button> </a>
+      
+        <a style="color: green" href="/userLogin"><button>Logout</button> </a>
     </div>
 </div>
 <div align="center">
@@ -28,7 +26,7 @@
         <th>Result</th>
     </tr>
        
-            <tr *ngFor="let std of studentlist">
+            <tr *ngFor="let std of studentarr">
             
                 <td>{{std.id}}</td>
                 <td>{{std.rollno}}</td>
@@ -39,11 +37,31 @@
                 <td>{{std.biology}}</td>
                 <td>{{std.division}}</td>
                 <td>{{std.result}}</td>
-                <td><a routerLink="/delete/this.{{std.id}}">Delete</a></td>
-                <td><a routerLink="/update/this.{{std.id}}">Edit</a></td>
+            
             </tr>
         
     </table>
     <br/>
-     <a routerLink="/addStudent"><button>Add Student</button></a>
+  
+     <input class="anchor1" type="button" value="ADD STUDENT" (click)="addStudent()" />
+    <input class="anchor1" type="button" value="Update Student by Id" (click)="update()" />
+    <br /><br />
+
+    <div *ngIf="statusClick" id="id">
+      <form #formUpdate="ngForm" (ngSubmit)="updateStudent(formUpdate)">
+        <label for="id"></label>
+
+        <input  name="id" required  [(ngModel)]="student.id" type="text" id="id" />
+
+        <input class="button" type="submit" value="Update" />
+      </form>
+    </div>
+
+    <br />
+    <br />
+    <div *ngIf="error" style="color: rgb(196, 243, 26)">
+      Student Id  Seems Incorrect !
+  </div>
+
+     
 </div>

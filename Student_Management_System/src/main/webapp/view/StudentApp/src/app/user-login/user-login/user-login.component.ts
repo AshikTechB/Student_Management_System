@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { StudentService } from 'src/app/service/student.service';
 
@@ -14,13 +15,14 @@ export class UserLoginComponent implements OnInit {
   title = "Student"
   status: boolean = false;
   error: boolean = false;
+  user: User;
   users: User[] = [];
   name: string | undefined;
 
   public formData: any = {};
 
-  constructor(private studentservice: StudentService, private router: Router, private route:ActivatedRoute) {
-
+  constructor(private studentservice: StudentService, private router: Router) {
+     this.user=new User();
    }
 
   ngOnInit(): void {
@@ -31,7 +33,7 @@ export class UserLoginComponent implements OnInit {
     this.formData = formdata.value;
 
     this.users.forEach(user => {
-      if (user.userid == this.formData.username && user.password == this.formData.password) {
+      if (user.username == this.formData.username && user.password == this.formData.password) {
 
         this.status = true;
       
