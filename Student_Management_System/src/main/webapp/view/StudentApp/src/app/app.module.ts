@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home/home.component';
+import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { StudentService } from './service/student.service';
 
 import { FormsModule } from '@angular/forms';
-import { UserRegistrationComponent } from './user-registration/user-registration/user-registration.component';
-import { UserLoginComponent } from './user-login/user-login/user-login.component';
-import { OutputStudentComponent } from './output-student/output-student/output-student.component';
-import { AddStudentComponent } from './add-student/add-student/add-student.component';
-import { UpdateStudentComponent } from './update-student/update-student/update-student.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { OutputStudentComponent } from './output-student/output-student.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
 
 @NgModule({
   declarations: [
