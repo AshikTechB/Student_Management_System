@@ -1,4 +1,5 @@
 
+
 <div class="html">
   <div class="card-body">
 
@@ -182,20 +183,20 @@
       </div>
       <br />
       <div class="form-group">
-        <label for="c_password"><b>Confirm Password </b></label>
+        <label for="confirmPassword"><b>Confirm Password </b></label>
         <input
           type="password"
           class="form-control"
           id="confirmPassword"
+          [(ngModel)]="confirmPassword"
           name="confirmPassword"
           placeholder="Confirm Password"
           required
-          
           #password="ngModel"
         />
        <!---->
 
-      
+       <div style="background-color: #fa1515" class="err">{{missmatch}}</div>
        <!---->
       </div>
       <br>
