@@ -1,0 +1,50 @@
+.body
+{
+	height: 600px;
+	background: url("https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/mzlskvtubb8x3lzm_1645267003.jpeg")
+	 no-repeat center;
+	background-size: 100% 100%;
+    background-position: top center;
+    padding-bottom: 80px;
+}
+.row h4{
+    position: relative;
+    right: 15px;
+    }
+
+.container h1
+{
+	text-align: center;
+}
+.foot
+{
+	
+	margin-left: 50%;
+	padding-bottom: 300px;
+}
+
+
+table, th, td {
+	width: 40%;
+	background-color:rgb(91, 250, 255);
+	border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+}
+.anchor1 {
+
+    display: ruby-text;
+    margin: 20px;
+    color: rgb(0, 0, 0);
+    border: 2px solid #e9780f;
+    border-radius: 6px ;
+    padding:14px;
+    background: rgb(255, 255, 87);
+    border: rgb(1, 1, 14);
+    font-weight: bold;
+    box-shadow: 0 9px rgb(215, 215, 218);
+    
+   } 
+   
+   .anchor1:hover{
+     background-color: rgb(207, 118, 200);
+   }

@@ -1,0 +1,71 @@
+
+<!--css-->
+
+<div class="body">
+  <div style="color: white" align="right">
+    <h4  class="row" align="right">
+      <br />
+      <a style="color: green" href="/home"><button>Home</button> </a>
+      &nbsp;
+      <a style="color: green" href="/userLogin"><button>Log out</button> </a>
+    </h4>
+
+  </div>
+  <div align="center"><div class="header" align="center">
+  <h1 style="color: rgb(255, 255, 255)">Student Management System</h1>
+  
+</div>
+<div align="center">
+  <h1 style="color: rgb(255, 255, 255)">Student List</h1>
+  <table border="1">
+      <tr>
+      <th>Id</th>
+      <th>RollNo</th>
+      <th>Name</th>
+      <th>Date Of Admission</th>
+      <th>Physics</th>
+      <th>Chemistry</th>
+      <th>Biology</th>
+      <th>Division</th>
+      <th>Result</th>
+  </tr>
+     
+          <tr *ngFor="let std of studentarr">
+          
+              <td>{{std.id}}</td>
+              <td>{{std.rollno}}</td>
+              <td>{{std.name}}</td>
+              <td>{{std.dateOfAdmission}}</td>
+              <td>{{std.physics}}</td>
+              <td>{{std.chemistry}}</td>
+              <td>{{std.biology}}</td>
+              <td>{{std.division}}</td>
+              <td>{{std.result}}</td>
+          
+          </tr>
+      
+  </table>
+  <br/>
+
+   <input class="anchor1" type="button" value="Add Student" (click)="addStudent()" />
+  <input class="anchor1" type="button" value="Update Student by Id" (click)="update()" />
+  <br /><br />
+
+  <div *ngIf="statusClick" id="id">
+    <form #formUpdate="ngForm" (ngSubmit)="updateStudent(formUpdate)">
+      <label for="id"></label>
+
+      <input  name="id" required  [(ngModel)]="student.id" type="text" id="id" />
+
+      <input class="button" type="submit" value="Update" />
+    </form>
+  </div>
+
+  <br />
+  <br />
+  <div *ngIf="error" style="color: rgb(196, 243, 26)">
+    Student Id  Seems Incorrect !
+</div>
+
+   
+</div>
