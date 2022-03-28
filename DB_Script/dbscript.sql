@@ -35,4 +35,4 @@ VALUES('Admin', '123', '9043846215', 'akash@gmail.com', 'Kanpur', 'Admin', '001'
 INSERT INTO user_detail(fname, lname, phone, email, address, username, userid, password)
 VALUES('Megha', 'Khan', '9567439434', 'kamkn@gmail.com', 'Bihar', 'Megha', '002', 'Megha@123');
 INSERT INTO user_detail(fname, lname, phone, email, address, username, userid, password)
-VALUES('Varun', 'Kumar', '8564138746', 'varunk@gmail.com', 'Delhi', 'Varun', '003' ,'Varun@123');
+VALUES('User', '1', '8564138746', 'User1k@gmail.com', 'Delhi', 'User1', '003' ,'User@123');
