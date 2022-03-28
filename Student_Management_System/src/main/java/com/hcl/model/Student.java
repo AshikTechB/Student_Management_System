@@ -14,6 +14,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+/*
+ * Student Entity/Model Class With Annotation 
+ * To Define The Table Structure Of Database 
+ * using Relational Model
+ */
+
 @Entity
 @Table(name="Student")
 public class Student {
