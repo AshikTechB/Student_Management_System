@@ -38,38 +38,43 @@ public class StudentController {
 	@Autowired
 	private UserService userservice;
 
+	/* Get all the student details */
 	@RequestMapping(path = "/allStudent", method = RequestMethod.GET, produces = "application/json")
 	public List<Student> allstudent() {
 
 		return studService.getAllStudent();
 	}
-
+       /*search student by id*/
 	@GetMapping(value = "/student/{id}")
 	public Student getstudent(@PathVariable("id") int id) {
 		return studService.getStudentById(id);
 	}
 
+	/*Add new student*/
 	@PostMapping(value = "/student")
 	public Student newStudent(@RequestBody Student stud) {
 		return studService.addStudent(stud);
 	}
-
+	
+/*update student by id*/
 	@PutMapping(value = "/updatestudent")
-	public String updateAnstudent(@RequestBody Student student) {
+	public Student updateAnstudent(@RequestBody Student student) {
 		return studService.updateStudent(student);
 	}
-
+/*delete student by id*/
 	@DeleteMapping(value = "/student/{id}")
-	public String deleteAnstudent(@PathVariable("id") int id) {
+	public Student deleteAnstudent(@PathVariable("id") int id) {
+		
 		Student s = studService.getStudentById(id);
-		return studService.deleteStudent(s);
+	     studService.deleteStudent(s);
+		return s;
 	}
-
+/*to add new user*/
 	@PostMapping(path = "/registeruser", consumes = "application/json")
 	void addUser(@RequestBody User user) {
 		userservice.addUser(user);
 	}
-
+/*to get all user details*/
 	@GetMapping(path = "/users", produces = "application/json")
 	public List<User> getUsers() {
 		return (List<User>) userservice.getAllUsers();
@@ -81,3 +86,4 @@ public class StudentController {
 	}
 
 }
+
