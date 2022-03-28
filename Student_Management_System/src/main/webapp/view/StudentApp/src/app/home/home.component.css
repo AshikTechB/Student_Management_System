@@ -6,6 +6,10 @@
     background-position: top center;
     padding-bottom: 80px;
   }
+.row{
+    position:relative;
+    right: 35px;
+  }
 .anchor1 {
 
  display: ruby-text;
