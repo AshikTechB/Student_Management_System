@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { StudentService } from 'src/app/service/student.service';
-
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-user-login',
@@ -18,7 +18,8 @@ export class UserLoginComponent implements OnInit {
   user: User;
   users: User[] = [];
   name: string | undefined;
-
+  pass:string='';
+  decryptedPassword:String='';
   public formData: any = {};
 
   constructor(private studentservice: StudentService, private router: Router) {
@@ -28,12 +29,18 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
     this.studentservice.getAllUser().subscribe(alluser => this.users = alluser);
   }
+  decrypt(password:String)
+  {
+    this.decryptedPassword = CryptoJS.AES.decrypt(password.trim(), "Encryption").toString(CryptoJS.enc.Utf8);
+    return this.decryptedPassword;
+  }
 
   userLogin(formdata: NgForm) {
     this.formData = formdata.value;
-
+   
     this.users.forEach(user => {
-      if (user.username == this.formData.username && user.password == this.formData.password) {
+     
+      if (user.username == this.formData.username && this.decrypt(user.password) == this.formData.password) {
 
         this.status = true;
       
@@ -48,5 +55,7 @@ export class UserLoginComponent implements OnInit {
       this.error = true;
     }
   }
-
+ 
 }
+
+
