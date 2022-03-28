@@ -39,16 +39,6 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	
-	public boolean validate_User(String username, String Password) {
-		boolean status = false;
-		ArrayList<User> users = (ArrayList<User>) userRepository.findAll();
-		for (User user : users) {
-			if ((user.getUsername().equals(username)) && user.getPassword().equals(Password))
-				return status = true;
-		}
-		return status;
-	}
-
 }
 
 ///here create a method
