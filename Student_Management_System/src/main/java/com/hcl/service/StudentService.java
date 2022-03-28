@@ -20,6 +20,8 @@ public class StudentService {
 	
 	@Autowired
 	private UserRepo userRepo;
+	
+	/*Add new student*/
 	public Student addStudent(Student Student) {
 		Optional<Student> optStud = StudentRepo.findById(Student.getId());
 		if(optStud.isPresent()) {
@@ -30,7 +32,7 @@ public class StudentService {
 			return s;
 		}
 	}
-	
+	/*get student details by id*/
 	public Student getStudentById(int id) {
 		Optional<Student> optStud = StudentRepo.findById(id);
 		if(optStud.isPresent()) {
@@ -40,45 +42,35 @@ public class StudentService {
 			throw new StudentNotFound("Student not present");
 		}
 	}
-	
+	/*to get all student*/
 	public List<Student> getAllStudent(){
 		List<Student> Students= StudentRepo.findAll();
 		return Students;
 	}
-	
-	public String updateStudent(Student Student) {
+	/*to update student*/
+	public Student updateStudent(Student Student) {
 		Optional<Student> optStud = StudentRepo.findById(Student.getId());
 		if(optStud.isPresent()) {
-			StudentRepo.save(Student);
-			return "update completed";
+			Student s=StudentRepo.save(Student);
+			return s;
 		}
 		else {
 			throw new StudentNotFound("Not present that Student");
 		}
 	} 
-	
-	public String deleteStudent(Student Student) {
+	/*to delete student*/
+	public Student deleteStudent(Student Student) {
+	    
 		Optional<Student> optStud = StudentRepo.findById(Student.getId());
 		if(optStud.isPresent()) {
-			StudentRepo.delete(Student);
-			return "update completed";
+			 StudentRepo.delete(Student);
+			return Student;
 		}
 		else {
 			throw new StudentNotFound("Not present that Student");
 		}
 	}
 	
-/*	public boolean findUser(String userId, String password) {
-		Optional<User> u = userRepo.findById(userId);
-		if(u.isPresent()) {
-			User user = u.get();
-			if(user.getPassword().equals(password)) {
-				return true;
-			}
-			return false;
-		}
-		return false;
-		
-	}*/
 
 }
+
