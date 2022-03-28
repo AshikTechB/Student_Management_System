@@ -30,6 +30,10 @@ import com.hcl.service.UserService;
 @RestController
 @CrossOrigin(origins = "http://localhost:4207/")
 
+/*
+ * Rest Controller Class For All the Rest API operation All the Methods are
+ * mapped for Different operations
+ */
 public class StudentController {
 
 	@Autowired
