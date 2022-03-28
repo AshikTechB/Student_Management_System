@@ -27,7 +27,7 @@ VALUES('003', '103', 'Varun', '20/04/2015', '35', '45', '34', 'III', 'Fail');
     address varchar(40),
     username varchar(40) UNIQUE, 
     userid number(20) NOT NULL,
-    password varchar(20),
+    password varchar(200),
      primary key(userid)
      );
 INSERT INTO user_detail(fname, lname, phone, email, address, username, userid, password)
