@@ -10,13 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+/*
+ * User Entity/Model Class With Annotation 
+ * To Define The Table Structure Of Database 
+ * using Relational Model
+ */
 
 @Entity
 @Table(name = "user_detail")
 public class User {
-    /*
-     *  
-    */
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userid")
