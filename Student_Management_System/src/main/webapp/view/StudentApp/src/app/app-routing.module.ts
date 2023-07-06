@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddStudentComponent } from './add-student/add-student.component';
-;
+
 import { HomeComponent } from './home/home.component';
 import { OutputStudentComponent } from './output-student/output-student.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
